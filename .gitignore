@@ -50,6 +50,7 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
+!loopback4-soft-delete-7.2.0-patched.tgz
 
 # Yarn Integrity file
 .yarn-integrity
