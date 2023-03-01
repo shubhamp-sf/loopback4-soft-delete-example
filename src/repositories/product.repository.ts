@@ -1,13 +1,16 @@
 import {inject} from '@loopback/core';
-import {IUser, SoftCrudRepository} from 'loopback4-soft-delete';
+import {
+  DefaultUserModifyCrudRepository,
+  IAuthUserWithPermissions,
+} from '@sourceloop/core';
 import {DbDataSource} from '../datasources';
 import {Product, ProductRelations} from '../models';
 
-const loggedInUserData: IUser = {
+const loggedInUserData = {
   id: 1,
-};
+} as unknown as IAuthUserWithPermissions;
 
-export class ProductRepository extends SoftCrudRepository<
+export class ProductRepository extends DefaultUserModifyCrudRepository<
   Product,
   typeof Product.prototype.id,
   ProductRelations
